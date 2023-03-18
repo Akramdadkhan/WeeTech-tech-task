@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "deviceName": "Reception Kiosk",
+    "miles": "0-1 Miles",
+    "type": [
+      {
+        "id": "1",
+        "type": "Pc"
+      },
+      {
+        "id": "2",
+        "type": "Tab"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "deviceName": "Restaurant Tab One",
+    "miles": "1-2 Miles",
+    "type": [
+      {
+        "id": "1",
+        "type": "Tab"
+      },
+      {
+        "id": "2",
+        "type": "Pc"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "deviceName": "Restaurant Tab One",
+    "miles": "2-3 Miles",
+    "type": [
+      {
+        "id": "1",
+        "type": "Pc"
+      },
+      {
+        "id": "2",
+        "type": "Tab"
+      }
+    ]
+  }
+]
