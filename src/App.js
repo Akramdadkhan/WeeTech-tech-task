@@ -13,6 +13,7 @@ function App() {
   const [devices, setDevices] = useState(data)
   console.log("devices", devices);
   const [show, setShow] = useState(false)
+  const [checked, setChecked] = React.useState(true);
   const [addDeviceData, setAddDeviceData] = useState({
     deviceName: "",
     miles: "",
@@ -134,12 +135,16 @@ function App() {
               <Fragment>
                 {editDeviceId === deviceData.id ? (
                   <EditDeviceData
+                    setChecked={setChecked}
+                    checked={checked}
                     editDevicesData={editDevicesData}
                     handleEditFormChange={handleEditFormChange}
                     handleCancelClick={handleCancelClick}
                   />
                 ) : (
                   <ReadonlyDeviceData
+                    setChecked={setChecked}
+                    checked={checked}
                     deviceData={deviceData}
                     handleEditClick={handleEditClick}
                     handleDeleteClick={handleDeleteClick}

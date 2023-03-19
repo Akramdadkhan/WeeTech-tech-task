@@ -6,8 +6,9 @@ const ReadonlyDeviceData = ({
   deviceData,
   handleEditClick,
   handleDeleteClick,
+  setChecked,
+  checked,
 }) => {
-  const [checked, setChecked] = React.useState(true);
   console.log("something", deviceData.type);
   return (
     <tr>
@@ -36,6 +37,7 @@ const ReadonlyDeviceData = ({
         >
           <BiEdit />
         </button>
+        &nbsp;&nbsp;&nbsp;
         <button type="button" onClick={() => handleDeleteClick(deviceData.id)}>
           <MdOutlineDelete />
         </button>

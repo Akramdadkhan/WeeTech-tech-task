@@ -6,8 +6,9 @@ const EditDeviceData = ({
     editDevicesData,
     handleEditFormChange,
     handleCancelClick,
+    setChecked,
+    checked,
 }) => {
-    const [checked, setChecked] = React.useState(true);
     console.log("whatsInName", editDevicesData?.deviceName);
     return (
         <tr>
@@ -48,6 +49,7 @@ const EditDeviceData = ({
             </TD>
             <TD>
                 <button type="submit"> <MdSave /></button>
+                &nbsp;&nbsp;&nbsp;
                 <button type="button" onClick={handleCancelClick}>
                     <MdCancel />
                 </button>
