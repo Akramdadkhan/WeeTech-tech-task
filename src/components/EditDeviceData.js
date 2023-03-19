@@ -7,6 +7,7 @@ const EditDeviceData = ({
     handleEditFormChange,
     handleCancelClick,
 }) => {
+    const [checked, setChecked] = React.useState(true);
     console.log("whatsInName", editDevicesData?.deviceName);
     return (
         <tr>
@@ -33,14 +34,17 @@ const EditDeviceData = ({
                 />
             </TD>
             <TD>
-                <select name="type" id="type">
+                <select name="type" id="type" >
                     {editDevicesData?.type?.map((val) => (
-                        <option name="type" value={val.id}>{val.type}</option>
+                        <option value={val.id}>{val.type}</option>
                     ))}
                 </select>
             </TD>
             <TD>
-                <input type="checkbox" readOnly="true" onChange={handleEditFormChange} />
+                <input name="checkBox" type="checkbox"
+                    defaultChecked={checked}
+                    onChange={() => setChecked(!checked)}
+                />
             </TD>
             <TD>
                 <button type="submit"> <MdSave /></button>

@@ -3,16 +3,27 @@ import { Button } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import { MdSave } from "react-icons/md";
 import Form from "react-bootstrap/Form";
-import data from "../mock-data.json";
 const Popup = ({
     show,
     setShow,
     handleAddFormChange,
     handleAddFormSubmit,
-
+    devices
 }) => {
-    const [devices, setDevices] = React.useState(data)
-    console.log("isdata", devices);
+    console.log("devicesss", devices);
+    const Options = ({ elem }) => {
+        const newItems = elem.type.filter((val, index) => {
+            return elem.type.indexOf(val) === index
+        })
+        console.log("newItems", newItems);
+        return (
+            <>
+                {newItems.map((val) => (
+                    <option name="type" id={val.id} value={val.type}>{val.type}</option>
+                ))}
+            </>
+        );
+    }
     return (
         <div>
             <Modal show={show} onHide={() => setShow(false)}>
@@ -26,6 +37,7 @@ const Popup = ({
                             <Form.Control
                                 type="text"
                                 required
+                                name="deviceName"
                                 placeholder="Enter Device Name"
                                 autoFocus
                                 onChange={handleAddFormChange}
@@ -36,10 +48,20 @@ const Popup = ({
                             <Form.Control
                                 type="text"
                                 required
+                                name="miles"
                                 placeholder="Enter Miles"
                                 autoFocus
                                 onChange={handleAddFormChange}
                             />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>type</Form.Label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select</option>
+                                {devices?.map((elem) => (
+                                    <Options elem={elem} />
+                                ))}
+                            </select>
                         </Form.Group>
 
 

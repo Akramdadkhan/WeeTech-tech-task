@@ -6,3 +6,10 @@ form {
 form * {
   font-size: 28px;
 }
+th {
+  background-color: rgb(180, 180, 180);
+}
+
+td {
+  background-color: rgb(240, 240, 240);
+}

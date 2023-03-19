@@ -119,9 +119,7 @@ function App() {
       <form onSubmit={handleEditFormSubmit}>
         <TableHead>
           <thead
-            css={`
-          background-color:red;
-          `}
+
           >
             <tr>
               <th>Device Name</th>

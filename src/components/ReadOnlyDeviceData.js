@@ -7,6 +7,7 @@ const ReadonlyDeviceData = ({
   handleEditClick,
   handleDeleteClick,
 }) => {
+  const [checked, setChecked] = React.useState(true);
   console.log("something", deviceData.type);
   return (
     <tr>
@@ -15,12 +16,18 @@ const ReadonlyDeviceData = ({
       <TD>
         <select name="type" id="type" disabled="true">
           {deviceData.type.map((val) => (
-            <option value={val.id}>{val.type}</option>
+            <option key={val.id} value={val.id}>
+              {val.type}
+            </option>
           ))}
         </select>
       </TD>
       <TD>
-        <input type="checkbox" readOnly="true" />
+        <input
+          type="checkbox"
+          defaultChecked={checked}
+          onChange={() => setChecked(!checked)}
+        />
       </TD>
       <TD>
         <button
